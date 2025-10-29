@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class AutoboxingSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        
+        System.out.println("Enter integers separated by space:");
+        String[] inputs = sc.nextLine().split(" ");
+        
+        // Parsing and autoboxing
+        for (String s : inputs) {
+            Integer num = Integer.parseInt(s); // String -> int -> Integer (autoboxing)
+            numbers.add(num);
+        }
+        
+        // Calculating sum using unboxing
+        int sum = 0;
+        for (Integer n : numbers) {
+            sum += n; // Integer -> int (unboxing)
+        }
+        
+        System.out.println("Sum of entered integers: " + sum);
+        sc.close();
+    }
+}
